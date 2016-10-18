@@ -4,7 +4,7 @@ Title: Bounded Parameter Objects
 Version: 0.1.0
 Author: Will Hopper
 Authors@R: person("Will", "Hopper", email="whopper@psych.umass.edu", role = c("aut", "cre"))
-Description: Implements as simple S4 class for parameters used in model fitting.
+Description: Implements a simple S4 class for parameters used in model fitting.
     Parameter objects are instantiated with their values, names and upper and lower
     bounds on their values. These objects are useful when optimizing a function
     using unconstrained, derivative free methods (e.g., Nelder-Mead).
