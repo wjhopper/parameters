@@ -1,10 +1,17 @@
 Package: parameters
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Bounded Parameter Objects
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Will Hopper
+Authors@R: person("Will", "Hopper", email="whopper@psych.umass.edu", role = c("aut", "cre"))
+Description: Implements as simple S4 class for parameters used in model fitting.
+    Parameter objects are instantiated with their values, names and upper and lower
+    bounds on their values. These objects are useful when optimizing a function
+    using unconstrained, derivative free methods (e.g., Nelder-Mead).
+License: MIT
 LazyData: TRUE
-Suggests: testthat
+Depends:
+    methods
+Suggests:
+    testthat
+RoxygenNote: 5.0.1
