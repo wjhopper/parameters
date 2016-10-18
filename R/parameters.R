@@ -13,10 +13,11 @@
 #' @slot lower_bound A numeric vector of length one. The \code{value} slot may
 #'   not be assinged a value less than the value of the \code{lower_bound} slot.
 #'
+#' @importFrom methods new
 #' @examples
 #' new("parameter", value = .5, name = "binomial_p",
 #'     upper_bound = 1, lower_bound = 0)
-setClass(Class = "parameter",
+parameter <- setClass(Class = "parameter",
          slots = list(value = "numeric",
                       name = "character",
                       upper_bound = "numeric",
@@ -49,12 +50,15 @@ NULL
 #' value(p)
 #' value(p) <- .9
 #' value(p)
+
+
 setGeneric(name = "value",
            def = function(object) standardGeneric("value")
            )
 
 #' @describeIn value Returns the value held the in the \code{value} slot as a
 #' named numeric vector.
+#' @export
 setMethod(f = "value",
           signature = "parameter",
           definition = function(object) {
@@ -76,6 +80,7 @@ setGeneric(name = "value<-",
 
 #' @describeIn value Replaces the value held the in the \code{value} slot
 #' @importFrom methods validObject
+#' @export
 setMethod(f = "value<-",
           signature = "parameter",
           definition = function(object, value) {
@@ -84,4 +89,21 @@ setMethod(f = "value<-",
             if (valid) {
               return(object)
             }
+          })
+
+#' @export
+print.parameter <- function(x, ...) {
+  cat(paste("Parameter:", x@name, "=", x@value),
+      paste("Upper Bound =", x@upper_bound, "Lower Bound =", x@lower_bound),
+      sep = "\n")
+}
+
+#' @describeIn parameter Print details about the object to the console
+#' @param object herp
+#' @importFrom methods show
+#' @export
+setMethod(f = "show",
+          signature = "parameter",
+          definition = function(object) {
+            print.parameter(object)
           })

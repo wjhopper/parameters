@@ -2,8 +2,16 @@
 % Please edit documentation in R/parameters.R
 \docType{class}
 \name{parameter-class}
+\alias{parameter}
 \alias{parameter-class}
+\alias{show,parameter-method}
 \title{Bounded parameter objects}
+\usage{
+\S4method{show}{parameter}(object)
+}
+\arguments{
+\item{object}{herp}
+}
 \description{
 An S4 class to represent a bounded parameter for a model
 }
@@ -11,6 +19,10 @@ An S4 class to represent a bounded parameter for a model
 No constructor function exists for \code{parameter} objects. Parameter
 objects should be instantiated with the \code{new()} function directly.
 }
+\section{Methods (by generic)}{
+\itemize{
+\item \code{show}: Print details about the object to the console
+}}
 \section{Slots}{
 
 \describe{

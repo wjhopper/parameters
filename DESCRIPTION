@@ -1,7 +1,7 @@
 Package: parameters
 Type: Package
 Title: Bounded Parameter Objects
-Version: 0.1.0
+Version: 0.1.1
 Author: Will Hopper
 Authors@R: person("Will", "Hopper", email="whopper@psych.umass.edu", role = c("aut", "cre"))
 Description: Implements a simple S4 class for parameters used in model fitting.
