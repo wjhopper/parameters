@@ -15,3 +15,30 @@ setClass(Class = "parameter",
                           object@lower_bound, "and", object@upper_bound))
            }
          })
+
+setGeneric(name = "value",
+           def = function(object) standardGeneric("value")
+           )
+
+setMethod(f = "value",
+          signature = "parameter",
+          definition = function(object) {
+            x <- object@value
+            names(x) <- object@name
+            return(x)
+          }
+          )
+
+setGeneric(name = "value<-",
+           def = function(object, value) standardGeneric("value<-")
+           )
+
+setMethod(f = "value<-",
+          signature = "parameter",
+          definition = function(object, value) {
+            object@value <- value
+            valid <- validObject(object)
+            if (valid) {
+              return(object)
+            }
+          })
